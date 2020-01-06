@@ -186,13 +186,19 @@ const initPlayer = (params, embed, resolve, reject) => {
   let player;
 
   try {
-    player = bc(embed, params.options);
-
-    // Add a PLAYER_LOADER property to bcinfo to indicate this player was
-    // loaded via that mechanism.
-    if (player.bcinfo) {
-      player.bcinfo.PLAYER_LOADER = true;
-    }
+    //Activating ad blocker detection
+    bc.usingAdBlocker().then(function(){
+      player = bc(embed, params.options);
+      // Add a PLAYER_LOADER property to bcinfo to indicate this player was
+      // loaded via that mechanism.
+      if (player.bcinfo) {
+        player.bcinfo.PLAYER_LOADER = true;
+      }
+      resolve({
+        type: EMBED_TYPE_IN_PAGE,
+        ref: player
+      });
+    });
   } catch (x) {
     let message = 'Could not initialize the Brightcove Player.';
 
@@ -206,11 +212,6 @@ const initPlayer = (params, embed, resolve, reject) => {
 
     return reject(new Error(message));
   }
-
-  resolve({
-    type: EMBED_TYPE_IN_PAGE,
-    ref: player
-  });
 };
 
 /**
