@@ -25,7 +25,7 @@ const getBcGlobalKeys = () =>
  *         An array of global variables that were added during testing.
  */
 const getGlobalKeys = () =>
-  Object.keys(window).filter(k => (/^videojs/i).test(k) || (/^(bc)$/).test(k));
+  Object.keys(window).filter(k => (/^videojs/i).test(k) || (/^(bc)$/).test(k) || k === 'shaka' || k === 'muxjs');
 
 /**
  * Dispose all players from a copy of Video.js.

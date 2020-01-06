@@ -1,5 +1,5 @@
 {
-  "name": "@brightcove/player-loader",
+  "name": "player-loader",
   "version": "1.7.1",
   "description": "An asynchronous script loader for the Brightcove Player.",
   "main": "dist/brightcove-player-loader.cjs.js",
@@ -43,7 +43,7 @@
     "player",
     "video"
   ],
-  "author": "Brightcove, Inc.",
+  "author": "Vineet Phillips",
   "license": "Apache-2.0",
   "vjsstandard": {
     "ignore": [
