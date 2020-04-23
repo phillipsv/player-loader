@@ -43,7 +43,10 @@
     "player",
     "video"
   ],
-  "author": "Vineet Phillips",
+  "author": "Brightcove, Inc.",
+  "contributors": [
+    "phillipsv@github.com"
+  ],
   "license": "Apache-2.0",
   "vjsstandard": {
     "ignore": [
